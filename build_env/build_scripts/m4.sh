@@ -1,0 +1,13 @@
+. $DIST_ROOT/build_env/build_scripts/start.sh $1
+
+./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)
+
+
+make
+
+make DESTDIR=$LFS install
+
+cd $LFS/sources
+. $DIST_ROOT/build_env/build_scripts/end.sh $1

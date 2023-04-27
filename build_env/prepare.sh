@@ -32,8 +32,8 @@ EOF
   cat > $dbhome/.bashrc << EOF
   set +h  
   umask 022
-  LFS=$LFS
-  DIST_ROOT=$DIST_ROOT
+  export LFS=$LFS
+  export DIST_ROOT=$DIST_ROOT
 EOF
 
   cat >> $dbhome/.bashrc << "EOF"
