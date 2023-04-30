@@ -1,4 +1,4 @@
-. $DIST_ROOT/build_env/build_scripts/start.sh $1
+. temp_tools/start.sh $1
 
 sh Configure -des                                        \
              -Dprefix=/usr                               \
@@ -13,4 +13,4 @@ sh Configure -des                                        \
 make
 make install
 
-. $DIST_ROOT/build_env/build_scripts/end.sh $1
+. temp_tools/end.sh $1

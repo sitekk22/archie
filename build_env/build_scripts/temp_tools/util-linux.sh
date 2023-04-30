@@ -1,4 +1,4 @@
-. $DIST_ROOT/build_env/build_scripts/start.sh $1
+. temp_tools/start.sh $1
 mkdir -pv /var/lib/hwclock
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime    \
             --libdir=/usr/lib    \
@@ -17,4 +17,4 @@ mkdir -pv /var/lib/hwclock
 make
 make install
 
-. $DIST_ROOT/build_env/build_scripts/end.sh $1
+. temp_tools/end.sh $1
