@@ -41,6 +41,6 @@ cd       build
 make
 make install
 cd ..
-cat gcc/limitx.h gcc/glimits.h gcc/limity.h > /lfs/archie/build_env/build_root/usr/lib/gcc/x86_64-lfs-linux-gnu/12.2.0/install-tools/include/limits.h
-
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
+      `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
 . $DIST_ROOT/build_env/build_scripts/end.sh $1

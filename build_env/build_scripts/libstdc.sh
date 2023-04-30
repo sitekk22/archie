@@ -1,5 +1,7 @@
 . $DIST_ROOT/build_env/build_scripts/start.sh $1
 
+rm -rf build
+
 mkdir -v build
 cd       build
 
