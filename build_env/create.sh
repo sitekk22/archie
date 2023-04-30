@@ -8,7 +8,7 @@ fi
 echo "Creating build environment..."
 sudo chown -R lfs:lfs $LFS
 cd $DIST_ROOT
-: << 'CHAPTER 6'
+#: << 'CHAPTER 6'
 # CHAPTER 5
 bash -e build_env/build_scripts/binutils-pass-1.sh binutils-2.40.tar.xz
 bash -e build_env/build_scripts/gcc-pass-1.sh gcc-12.2.0.tar.xz
@@ -16,9 +16,9 @@ bash -e build_env/build_scripts/linux-header.sh linux-6.1.11.tar.xz
 bash -e build_env/build_scripts/glibc.sh glibc-2.37.tar.xz
 bash -e build_env/build_scripts/libstdc.sh gcc-12.2.0.tar.xz
 
-CHAPTER 6
+#CHAPTER 6
 echo "CHAPTER 6 DONE"
-#: << 'CHAPTER 7'
+: << 'CHAPTER 7'
 bash -e build_env/build_scripts/m4.sh m4-1.4.19.tar.xz
 bash -e build_env/build_scripts/ncurses.sh ncurses-6.4.tar.gz
 bash -e build_env/build_scripts/bash.sh bash-5.2.15.tar.gz

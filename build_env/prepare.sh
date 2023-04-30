@@ -13,11 +13,12 @@ do
 done;
 
 
-mkdir -pv $LFS/{etc,var,lib64} $LFS/usr/{bin,lib,sbin,lib64,tools}
+mkdir -pv $LFS/{etc,var,lib64,tools} $LFS/usr/{bin,lib,sbin,lib64,tools}
 
 for i in bin lib sbin; do
   ln -sv usr/$i $LFS/$i
 done
+
 
 if ! test $(id -u lfs) ; then
   groupadd lfs
