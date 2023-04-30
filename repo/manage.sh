@@ -12,10 +12,12 @@ do
 
     #echo $p #name
     ver=$(echo $p | cut -d "-" -f 2-)
-
-
     repo_dir="$path/sources/${p:0:1}/$bn"
     cd $repo_dir
-    pwd
+    wget -O $repo_dir/$p  $repo
+    tar -xf $p
+    cd $bn
+    ../build.sh
+
 done
 #grep -i $links -f $list > needed
