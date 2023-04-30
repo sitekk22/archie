@@ -14,8 +14,8 @@ do
     ver=$(echo $p | cut -d "-" -f 2-)
     repo_dir="$path/sources/${p:0:1}/$bn"
     cd $repo_dir
-    wget -O $repo_dir/$p  $repo
-    tar -xf $p
+    wget -O $repo_dir/$p.tar.xz  $repo
+    mkdir $bn && tar -xf $p -C $bn --strip-components 1
     cd $bn
     ../build.sh
 
