@@ -9,14 +9,14 @@ echo "Creating build environment..."
 sudo chown -R lfs:lfs $LFS
 cd $DIST_ROOT
 : << 'CHAPTER 6'
-# CHAPTER 5
+
+CHAPTER 6
 bash -e build_env/build_scripts/binutils-pass-1.sh binutils-2.40.tar.xz
 bash -e build_env/build_scripts/gcc-pass-1.sh gcc-12.2.0.tar.xz
 bash -e build_env/build_scripts/linux-header.sh linux-6.1.11.tar.xz
 bash -e build_env/build_scripts/glibc.sh glibc-2.37.tar.xz
 bash -e build_env/build_scripts/libstdc.sh gcc-12.2.0.tar.xz
 
-CHAPTER 6
 
 echo "CHAPTER 6 DONE"
 #: << 'CHAPTER 7'
