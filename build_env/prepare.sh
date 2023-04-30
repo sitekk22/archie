@@ -1,19 +1,19 @@
 echo "Dist Root: ${DIST_ROOT:?}"
 echo "LFS: ${LFS:?}"
 
-mkdir -p $LFS/sources 
+mkdir -p $LFS/sources
 
 for f in $(cat $DIST_ROOT/build_env/build_env_list)
 do
    bn=$(basename $f)
    echo $bn
    if ! test -f $LFS/sources/$bn ; then
-      wget $f -O $LFS/sources/$bn  
+      wget $f -O $LFS/sources/$bn
    fi
 done;
 
 
-mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin,lib64,tools}
+mkdir -pv $LFS/{etc,var,lib64} $LFS/usr/{bin,lib,sbin,lib64,tools}
 
 for i in bin lib sbin; do
   ln -sv usr/$i $LFS/$i
@@ -30,7 +30,7 @@ if ! test $(id -u lfs) ; then
   exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
 EOF
   cat > $dbhome/.bashrc << EOF
-  set +h  
+  set +h
   umask 022
   export LFS=$LFS
   export DIST_ROOT=$DIST_ROOT
@@ -47,5 +47,5 @@ EOF
   export MAKEFLAGS="-j$(nproc)"
 EOF
 
-  
+
 fi

@@ -1,5 +1,4 @@
 . $DIST_ROOT/build_env/build_scripts/start.sh $1
-#cd $LFS/sources
 ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
 ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
 patch -Np1 -i ../glibc-2.37-fhs-1.patch

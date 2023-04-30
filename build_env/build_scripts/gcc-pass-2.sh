@@ -8,7 +8,7 @@ tar -xf ../mpc-1.3.1.tar.gz
 mv -v mpc-1.3.1 mpc
 
 sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
-  
+
 
 sed '/thread_header =/s/@.*@/gthr-posix.h/' \
     -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in
