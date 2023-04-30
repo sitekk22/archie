@@ -1,6 +1,6 @@
-path="/lfs/archie/repo"
-list="/lfs/archie/repo/package_list"
-links="/lfs/archie/repo/links"
+path="/sources/repo"
+list="$path/package_list"
+links="$path/links"
 
 for p in $(cat $list)
 do
@@ -13,11 +13,13 @@ do
     #echo $p #name
     ver=$(echo $p | cut -d "-" -f 2-)
     repo_dir="$path/sources/${p:0:1}/$bn"
-    cd $repo_dir
-    wget -O $repo_dir/$p.tar.xz  $repo
-    mkdir $bn && tar -xf $p -C $bn --strip-components 1
-    cd $bn
-    ../build.sh
-
+    cd $repo_dir/$bn
+    #wget -O $repo_dir/$p.tar.xz  $repo
+    #mkdir $bn && tar -xf $p -C $bn --strip-components 1
+    .././build.sh
+    echo "---------------------------------------"
+    echo "$p DONE"
+    echo "---------------------------------------"
+    sleep 2
 done
 #grep -i $links -f $list > needed

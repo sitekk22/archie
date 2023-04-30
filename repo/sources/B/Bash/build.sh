@@ -15,5 +15,4 @@ exit $value
 EOF
 
 make install
-exec /usr/bin/bash --login
 
