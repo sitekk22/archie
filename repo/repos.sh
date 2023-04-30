@@ -15,7 +15,8 @@ do
         mkdir -p sources/${p:0:1}/$bn 2>/dev/null
         echo $p
         repo_dir="$path/sources/${p:0:1}/$bn"
-        cat >> $repo_dir/.pck << EOF
+: << "STOP"
+cat >> $repo_dir/.pck << EOF
 name: $bn
 version: $ver
 repo: core
@@ -55,4 +56,4 @@ extras: [
 EOF
 
 #grep -i $links -f $list > needed
-
+STOP

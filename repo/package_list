@@ -43,7 +43,7 @@ Autoconf-2.71
 Automake-1.16.5
 OpenSSL-3.0.8
 Kmod-30
-Libelf from Elfutils-0.188
+Elfutils-0.188
 Libffi-3.4.4
 Python-3.11.2
 Wheel-0.38.4
