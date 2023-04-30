@@ -15,6 +15,7 @@ do
 
 
     repo_dir="$path/sources/${p:0:1}/$bn"
-    cd repo_dir
+    cd $repo_dir
+    pwd
 done
 #grep -i $links -f $list > needed
