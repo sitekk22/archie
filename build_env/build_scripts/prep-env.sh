@@ -1,3 +1,5 @@
+echo "LFS: ${LFS:?}"
+echo "DIST_ROOT: ${DIST_ROOT:?}"
 chown -R root:root $LFS/{usr,lib,var,etc,bin,sbin,tools,lib64}
 
 mkdir -pv $LFS/{dev,proc,sys,run}
