@@ -2,6 +2,7 @@ path="/sources/repo"
 list="$path/package_list"
 links="$path/links"
 
+export MAKEFLAGS='-j 12'
 for p in $(cat $list)
 do
 
@@ -16,7 +17,12 @@ do
     cd $repo_dir/$bn
     #wget -O $repo_dir/$p.tar.xz  $repo
     #mkdir $bn && tar -xf $p -C $bn --strip-components 1
-    .././build.sh
+    if test -f ../$bn.log; then
+        rm ../$bn.log
+    fi
+    touch ../$bn.log
+
+    .././build.sh | tee ../$bn.log
     echo "---------------------------------------"
     echo "$p DONE"
     echo "---------------------------------------"
