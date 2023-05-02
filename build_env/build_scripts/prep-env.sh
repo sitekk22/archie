@@ -12,11 +12,11 @@ if [ -h $LFS/dev/shm  ]; then
       mkdir -pv $LFS/$(readlink $LFS/dev/shm)
   else
         mount -t tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
-        fi
+fi
 
 chroot "$LFS" /usr/bin/env -i   \
-                HOME=/root                  \
-                    TERM="$TERM"                \
-                        PS1='(lfs chroot) \u:\w\$ ' \
-                            PATH=/usr/bin:/usr/sbin     \
-                                /bin/bash --login
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login

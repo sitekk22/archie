@@ -28,7 +28,4 @@ https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tar.xz
 https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.2.tar.xz
 https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz
 https://ftp.gnu.org/gnu/glibc/glibc-2.37.tar.xz
-https://github.com/mesonbuild/meson/releases/download/1.1.0/meson-1.1.0.tar.gz
-https://github.com/ninja-build/ninja/archive/refs/tags/v1.11.1.tar.gz
-https://sources.archlinux.org/other/pacman/pacman-6.0.2.tar.xz
-https://ftp.gnu.org/gnu/wget/wget2-2.0.1.tar.gz
+https://www.linuxfromscratch.org/lfs/downloads/11.3/lfs-bootscripts-20230101.tar.xz
