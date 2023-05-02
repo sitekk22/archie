@@ -3,6 +3,8 @@ list="/lfs/archie/repo/package_list"
 links="/lfs/archie/repo/links"
 patches="/lfs/archie/repo/patches"
 : << "COMM"
+
+COMM
 for p in $(cat $list)
 do
 
@@ -21,11 +23,8 @@ do
         wget -O $repo_dir/$p.tar  $repo
         mkdir -p $bn && tar -xf $p.tar -C $bn --strip-components 1
     fi
-    #cd $bn
-    #../build.sh
 
 done
-COMM
 for p in $(cat $patches)
 do
 
@@ -34,6 +33,8 @@ do
     bn=$(echo $name | cut -d "-" -f 1)
     echo $bn
     pth=$(find $path -maxdepth 3 -iname "$bn")
-    wget -P $pth $p
+    if ! test -f $pth/$name; then
+        wget -O $pth/${name,} $p
+    fi
 done
 #grep -i $links -f $list > needed
