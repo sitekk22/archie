@@ -1,7 +1,8 @@
 path="/lfs/archie/build_env/build_root/sources/repo"
 list="/lfs/archie/repo/package_list"
 links="/lfs/archie/repo/links"
-
+patches="/lfs/archie/repo/patches"
+: << "COMM"
 for p in $(cat $list)
 do
 
@@ -23,5 +24,15 @@ do
     #cd $bn
     #../build.sh
 
+done
+COMM
+for p in $(cat $patches)
+do
+
+    name=$(echo $p | rev | cut -d "/" -f 1 | rev)
+    name=${name^}
+    bn=$(echo $name | cut -d "-" -f 1)
+    echo $bn
+    wget -P /lfs/archie/build_env/build_root/sources/repo/sources/${name:0:1}/$bn $p
 done
 #grep -i $links -f $list > needed
