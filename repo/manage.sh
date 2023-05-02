@@ -1,7 +1,8 @@
 path="/sources/repo"
 list="$path/package_list"
 links="$path/links"
-
+log_file=$path/log
+touch $log_file
 export MAKEFLAGS='-j 12'
 for p in $(cat $list)
 do
@@ -23,6 +24,7 @@ do
     touch ../$bn.log
 
     .././build.sh | tee ../$bn.log
+    echo "$? $bn" >> $log_file
     echo "---------------------------------------"
     echo "$p DONE"
     echo "---------------------------------------"
