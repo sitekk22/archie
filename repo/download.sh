@@ -33,6 +33,7 @@ do
     name=${name^}
     bn=$(echo $name | cut -d "-" -f 1)
     echo $bn
-    wget -P /lfs/archie/build_env/build_root/sources/repo/sources/${name:0:1}/$bn $p
+    pth=$(find $path -maxdepth 3 -iname "$bn")
+    wget -P $pth $p
 done
 #grep -i $links -f $list > needed
