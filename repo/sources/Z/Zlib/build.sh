@@ -2,4 +2,5 @@
 
 make
 make check
-make installrm -fv /usr/lib/libz.a
+make install
+rm -fv /usr/lib/libz.a
